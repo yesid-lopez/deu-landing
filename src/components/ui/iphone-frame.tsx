@@ -1,7 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 interface IPhoneFrameProps {
   children?: React.ReactNode;
@@ -10,12 +11,27 @@ interface IPhoneFrameProps {
 
 export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [isInitialAnimationComplete, setIsInitialAnimationComplete] = useState(false);
+
+  useEffect(() => {
+    // Trigger initial animation once component mounts
+    if (!hasAnimated) {
+      setTimeout(() => {
+        setHasAnimated(true);
+        // Reset back to original size after animation
+        setTimeout(() => {
+          setIsInitialAnimationComplete(true);
+        }, 300); // Duration matches the animation
+      }, 500);
+    }
+  }, [hasAnimated]);
 
   return (
     <div
       className={cn(
         "relative mx-auto rounded-[60px] border-[14px] border-black bg-white shadow-2xl",
-        " h-[712px] w-[310px] sm:w-[290px] sm:h-[740px]",
+        "h-[712px] w-[310px] sm:w-[290px] sm:h-[740px]",
         "border-[10px]",
         "rounded-[45px]",
         className
@@ -27,25 +43,36 @@ export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
       </div>
 
       {/* Dynamic Island */}
-      <div
-        onClick={() => setIsExpanded(!isExpanded)}
-        className={cn(
-          "absolute left-1/2 top-[12px] -translate-x-1/2 transform bg-black transition-all duration-300 cursor-pointer",
-          isExpanded
-            ? "h-[120px] w-[220px] rounded-[40px]"
-            : "h-[30px] w-[120px] rounded-[40px]",
-          "top-[12px]",
-          "z-10"
-        )}
-      >
-        {/* Optional: Add content inside Dynamic Island */}
-        <div className="flex h-full w-full items-center justify-center">
-          {isExpanded && (
-            <div className="text-white text-sm p-4">
-              Dynamic Island Content
-            </div>
+      <div className="absolute left-0 right-0 top-[12px] flex justify-center">
+        <motion.div
+          initial={{ scale: 1 }}
+          animate={{
+            scale: hasAnimated && !isInitialAnimationComplete ? 1.8 : 1,
+          }}
+          whileHover={{ scale: isExpanded ? 1 : 1.2 }}
+          transition={{
+            duration: isExpanded ? 0 : 0.2,
+            type: "spring",
+            stiffness: 200
+          }}
+          onClick={() => setIsExpanded(!isExpanded)}
+          className={cn(
+            "bg-black transition-all duration-300 cursor-pointer",
+            isExpanded
+              ? "h-[120px] w-[220px] rounded-[40px]"
+              : "h-[30px] w-[120px] rounded-[40px]",
+            "z-10"
           )}
-        </div>
+        >
+          {/* Optional: Add content inside Dynamic Island */}
+          <div className="flex h-full w-full items-center justify-center">
+            {isExpanded && (
+              <div className="text-white text-sm p-4">
+                Dynamic Island Content
+              </div>
+            )}
+          </div>
+        </motion.div>
       </div>
       
       {/* Lock Button */}
