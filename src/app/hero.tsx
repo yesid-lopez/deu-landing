@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen p-8">
-      <div className="absolute top-10 sm:top-0 w-20 h-20 relative">
+    <div className="relative flex flex-col items-center justify-center min-h-screen">
+      <div className="absolute top-10 w-20 h-20 relative">
         <Image
           src="/lulo.png"
           alt="Lulo logo"
@@ -26,6 +26,10 @@ export default function Hero() {
           />
         </div>
       </IPhoneFrame>
+      <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">
+        Living in Germany starts here
+      </h1>
+      
     </div>
   );
 }

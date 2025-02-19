@@ -14,11 +14,10 @@ export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
   return (
     <div
       className={cn(
-        "relative mx-auto h-[712px] w-[350px] rounded-[60px] border-[14px] border-black bg-white shadow-xl",
-        "sm:scale-100 scale-[0.85] sm:h-[712px] sm:w-[350px] h-[600px] w-[280px]",
+        "relative mx-auto h-[712px] w-[350px] rounded-[60px] border-[14px] border-black bg-white shadow-2xl",
+        "sm:scale-70 scale-[0.85] sm:h-[712px] sm:w-[350px] h-[600px] w-[280px]",
         "sm:border-[14px] border-[10px]",
         "sm:rounded-[60px] rounded-[45px]",
-        "z-0",
         className
       )}
     >
