@@ -28,7 +28,8 @@ export default function Hero() {
       </IPhoneFrame>
       <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">
         Living in Germany starts here
-      </h1>
+      </h1>      
+      
       
     </div>
   );
