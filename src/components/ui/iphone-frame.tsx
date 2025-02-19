@@ -18,6 +18,7 @@ export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
         "sm:scale-100 scale-[0.85] sm:h-[712px] sm:w-[350px] h-[600px] w-[280px]",
         "sm:border-[14px] border-[10px]",
         "sm:rounded-[60px] rounded-[45px]",
+        "z-0",
         className
       )}
     >
@@ -30,11 +31,12 @@ export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
       <div
         onClick={() => setIsExpanded(!isExpanded)}
         className={cn(
-          "absolute left-1/2 top-[12px] -translate-x-1/2 transform bg-black transition-all duration-300 cursor-pointer z-10",
+          "absolute left-1/2 top-[12px] -translate-x-1/2 transform bg-black transition-all duration-300 cursor-pointer",
           isExpanded
             ? "h-[120px] w-[220px] rounded-[40px]"
             : "h-[30px] w-[120px] rounded-[40px]",
-          "sm:top-[12px] top-[10px]"
+          "sm:top-[12px] top-[10px]",
+          "z-10"
         )}
       >
         {/* Optional: Add content inside Dynamic Island */}
