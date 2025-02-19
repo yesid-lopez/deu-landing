@@ -14,15 +14,15 @@ export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
   return (
     <div
       className={cn(
-        "relative mx-auto h-[712px] w-[350px] rounded-[60px] border-[14px] border-black bg-white shadow-2xl",
-        "sm:scale-70 scale-[0.85] sm:h-[712px] sm:w-[350px] h-[600px] w-[280px]",
-        "sm:border-[14px] border-[10px]",
-        "sm:rounded-[60px] rounded-[45px]",
+        "relative mx-auto rounded-[60px] border-[14px] border-black bg-white shadow-2xl",
+        " h-[712px] w-[310px] sm:w-[290px] sm:h-[740px]",
+        "border-[10px]",
+        "rounded-[45px]",
         className
       )}
     >
       {/* Inner Screen */}
-      <div className="h-full w-full overflow-hidden rounded-[35px] bg-white sm:rounded-[45px]">
+      <div className="h-full w-full overflow-hidden rounded-[35px] bg-white">
         {children}
       </div>
 
@@ -34,7 +34,7 @@ export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
           isExpanded
             ? "h-[120px] w-[220px] rounded-[40px]"
             : "h-[30px] w-[120px] rounded-[40px]",
-          "sm:top-[12px] top-[10px]",
+          "top-[12px]",
           "z-10"
         )}
       >
@@ -49,11 +49,11 @@ export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
       </div>
       
       {/* Lock Button */}
-      <div className="absolute sm:-right-[18px] -right-[14px] top-[150px] h-[65px] w-[4px] rounded-r-lg bg-black" />
+      <div className="absolute -right-[14px] top-[150px] h-[65px] w-[4px] rounded-r-lg bg-black" />
       
       {/* Volume Buttons */}
-      <div className="absolute sm:-left-[18px] -left-[14px] top-[150px] h-[65px] w-[4px] rounded-l-lg bg-black" />
-      <div className="absolute sm:-left-[18px] -left-[14px] top-[230px] h-[65px] w-[4px] rounded-l-lg bg-black" />
+      <div className="absolute -left-[14px] top-[150px] h-[65px] w-[4px] rounded-l-lg bg-black" />
+      <div className="absolute -left-[14px] top-[230px] h-[65px] w-[4px] rounded-l-lg bg-black" />
     </div>
   );
 } 

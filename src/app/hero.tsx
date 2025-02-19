@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen">
-      <div className="absolute top-10 w-20 h-20 relative">
+    <div className="relative flex flex-col items-center justify-center h-screen">
+      <div className="absolute w-[150px] h-[150px] relative">
         <Image
           src="/lulo.png"
           alt="Lulo logo"
@@ -21,21 +21,21 @@ export default function Hero() {
             src="/test_image.png"
             alt="Vita health dashboard"
             fill
-            className="object-cover"
             priority
+            quality={100}
           />
         </div>
       </IPhoneFrame>
-      <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">
+      <h1 className="text-2xl md:text-3xl font-bold text-center m-4">
         Living in Germany starts here
-      </h1>      
-      
+      </h1>
+
       {/* App Store Badge Button */}
-      <a 
-        href="https://apps.apple.com/your-app-link" 
-        target="_blank" 
+      <a
+        href="https://apps.apple.com/your-app-link"
+        target="_blank"
         rel="noopener noreferrer"
-        className="mt-4 transition-transform hover:scale-105"
+        className="m-4 transition-transform hover:scale-105"
       >
         <Image
           src="/app_store_badge.png"
