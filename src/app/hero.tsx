@@ -30,7 +30,21 @@ export default function Hero() {
         Living in Germany starts here
       </h1>      
       
-      
+      {/* App Store Badge Button */}
+      <a 
+        href="https://apps.apple.com/your-app-link" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="mt-4 transition-transform hover:scale-105"
+      >
+        <Image
+          src="/app_store_badge.png"
+          alt="Download on the App Store"
+          width={200}
+          height={60}
+          className="object-contain"
+        />
+      </a>
     </div>
   );
 }
