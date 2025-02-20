@@ -1,0 +1,29 @@
+{
+  "features": [
+    {
+      "title": "Track Your Health Metrics",
+      "description": "Monitor your vital signs including height, heart rate, and age with our intuitive dashboard. Get instant insights into your personal health data, allowing you to make informed decisions about your well-being and track changes over time for a more proactive approach to health management.",
+      "screenshot": "/features/test_image.png"
+    },
+    {
+      "title": "Glucose Monitoring",
+      "description": "Keep track of your glucose levels with real-time monitoring and visualization. Stay within your target range with clear min/max indicators, and receive alerts when your levels fluctuate, ensuring you can take immediate action to maintain optimal health.",
+      "screenshot": "/features/test_image2.png"
+    },
+    {
+      "title": "Set Health Goals",
+      "description": "Define and track your health objectives with customizable goals for fasting glucose, post-meal levels, and HbA1c targets. Our platform empowers you to set realistic milestones and provides motivation through progress tracking and reminders.",
+      "screenshot": "/features/test_image3.png"
+    },
+    {
+      "title": "Comprehensive Analytics",
+      "description": "View detailed trends and patterns in your health data through interactive charts and comprehensive analysis. Dive deep into your historical data to understand your health journey and identify areas for improvement, making it easier to share insights with your healthcare provider.",
+      "screenshot": "/features/test_image.png"
+    },
+    {
+      "title": "Personalized Insights",
+      "description": "Receive tailored recommendations and insights based on your unique health profile and goals. Our intelligent algorithms analyze your data to provide actionable advice, helping you to optimize your health strategies and achieve your wellness aspirations.",
+      "screenshot": "/features/test_image2.png"
+    }
+  ]
+} 
