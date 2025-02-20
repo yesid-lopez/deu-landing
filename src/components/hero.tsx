@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="relative flex flex-col items-center justify-center h-screen">
+    <section className="relative flex flex-col items-center justify-center h-screen">
       <div className="absolute w-[150px] h-[150px] relative">
         <Image
           src="/lulo.png"
@@ -45,6 +45,6 @@ export default function Hero() {
           className="object-contain"
         />
       </a>
-    </div>
+    </section>
   );
 }
