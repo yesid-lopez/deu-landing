@@ -39,7 +39,7 @@ export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
       )}
     >
       {/* Inner Screen */}
-      <div className="h-full w-full overflow-hidden rounded-[35px] bg-white">
+      <div className="h-full w-full overflow-hidden rounded-[35px] bg-white relative">
         {children}
       </div>
 

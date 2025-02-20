@@ -16,15 +16,13 @@ export default function Hero() {
 
       {/* Phone container */}
       <IPhoneFrame className="w-[320px] sm:w-[300px]">
-        <div className="h-full w-full relative">
-          <Image
-            src="/test_image.png"
-            alt="Vita health dashboard"
-            fill
-            priority
-            quality={100}
-          />
-        </div>
+        <Image
+          src="/test_image.png"
+          alt="Vita health dashboard"
+          fill
+          priority
+          quality={100}
+        />
       </IPhoneFrame>
       <h1 className="text-2xl md:text-3xl font-bold text-center m-4">
         Living in Germany starts here
