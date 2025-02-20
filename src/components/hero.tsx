@@ -15,7 +15,7 @@ export default function Hero() {
       </div>
 
       {/* Phone container */}
-      <IPhoneFrame>
+      <IPhoneFrame className="w-[320px] sm:w-[300px]">
         <div className="h-full w-full relative">
           <Image
             src="/test_image.png"

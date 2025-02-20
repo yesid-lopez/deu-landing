@@ -31,7 +31,8 @@ export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
     <div
       className={cn(
         "relative mx-auto rounded-[60px] border-[14px] border-black bg-white shadow-2xl",
-        "h-[712px] w-[310px] sm:w-[290px] sm:h-[740px]",
+        "h-[660px] w-[320px]",
+        "sm:h-[680px] sm:w-[330px]",
         "border-[10px]",
         "rounded-[45px]",
         className
