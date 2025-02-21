@@ -4,7 +4,7 @@ namespace: lulo
 image:
   repository: docker.yesidlopez.de/lid
   pullPolicy: IfNotPresent
-  tag: "2.6"
+  tag: "2.8"
 
 service:
   type: LoadBalancer
