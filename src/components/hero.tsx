@@ -1,21 +1,13 @@
 import { IPhoneFrame } from "@/components/ui/iphone-frame";
 import Image from "next/image";
-
+import LuloIcon from "@/components/ui/lulo-icon";
 export default function Hero() {
   return (
     <section className="relative flex flex-col items-center justify-center h-screen">
-      <div className="absolute w-[150px] h-[150px] relative">
-        <Image
-          src="/lulo.png"
-          alt="Lulo logo"
-          fill
-          className="object-contain"
-          priority
-        />
-      </div>
+      <LuloIcon />
 
       {/* Phone container */}
-      <IPhoneFrame className="w-[320px] sm:w-[300px]">
+      <IPhoneFrame className="w-[320px] sm:w-[280px]">
         <Image
           src="/test_image.png"
           alt="Vita health dashboard"

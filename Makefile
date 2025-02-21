@@ -21,11 +21,13 @@ run:
 .PHONY: stop
 stop:
 	docker stop $$(docker ps -q --filter ancestor=docker.yesidlopez.de/$(IMAGE_NAME):$(IMAGE_TAG))
-
+	
 # Publish the Docker image
 .PHONY: publish
 publish:
 	docker push docker.yesidlopez.de/$(IMAGE_NAME):$(IMAGE_TAG)
+	sed -i '' 's/tag: ".*"/tag: "$(IMAGE_TAG)"/' chart/values.yaml
+	helm upgrade --install lid chart/ --namespace lulo
 
 # Clean up: remove containers and images
 .PHONY: clean
@@ -41,4 +43,5 @@ help:
 	@echo "  run    - Run the container"
 	@echo "  stop   - Stop running containers"
 	@echo "  clean  - Remove containers and images"
+	@echo "  publish - Publish the Docker image"
 	@echo "  help   - Show this help message" 
