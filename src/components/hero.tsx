@@ -13,7 +13,7 @@ const HeroCard = () => {
         href="https://apps.apple.com/your-app-link"
         target="_blank"
         rel="noopener noreferrer"
-        className="transition-transform hover:scale-105 bg-blue-800"
+        className="transition-transform hover:scale-105"
       >
         <Image
           src="/app_store_badge.png"
