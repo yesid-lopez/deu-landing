@@ -168,7 +168,7 @@ export function Features() {
 
   return (
     <>
-      <div ref={containerRef} className="h-[400vh]"> {/* Reduced height for tighter scrolling */}
+      <div ref={containerRef} className="h-[400dvh]"> {/* Reduced height for tighter scrolling */}
         <div className="sticky top-0 md:h-screen h-[80vh]">
           <FeatureRectangle />
           <div className="absolute inset-0 grid grid-cols-12 items-center px-4 sm:px-8">

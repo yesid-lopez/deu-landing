@@ -29,6 +29,8 @@ publish:
 	sed -i '' 's/tag: ".*"/tag: "$(IMAGE_TAG)"/' chart/values.yaml
 	helm upgrade --install lid chart/ --namespace lulo
 
+build-and-publish: build publish
+
 # Clean up: remove containers and images
 .PHONY: clean
 clean:
