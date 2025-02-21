@@ -164,7 +164,7 @@ export function Features() {
   const stickyProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <div ref={containerRef} className="h-[400dvh]">
+    <div ref={containerRef} className="h-[400dvh]" id="features">
       {/* Reduced height for tighter scrolling */}
       <div className="sticky top-0 md:h-screen h-[80vh]">
         <FeatureRectangle />

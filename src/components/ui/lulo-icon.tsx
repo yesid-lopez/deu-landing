@@ -5,8 +5,8 @@ const LuloIcon = () => {
     <Image
         src="/lulo.png"
         alt="Lulo logo"
-        width={150}
-        height={150}
+        width={120}
+        height={120}
         priority
       />
   );

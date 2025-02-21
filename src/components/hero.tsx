@@ -1,5 +1,4 @@
 import { IPhoneFrame } from "@/components/ui/iphone-frame";
-import LuloIcon from "@/components/ui/lulo-icon";
 import Image from "next/image";
 
 const HeroCard = () => {
@@ -30,25 +29,18 @@ const HeroCard = () => {
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center min-h-[100svh]">
-      <div className="relative pt-2">
-        <LuloIcon />
-      </div>
-
-      <div className="relative flex flex-col items-center w-full">
-        <IPhoneFrame className="sm:h-[580px] sm:w-[320px]">
-          <Image
-            src="/test_image.png"
-            alt="Vita health dashboard"
-            fill
-            priority
-            quality={100}
-          />
-        </IPhoneFrame>
-
-        <div className="relative transform -translate-y-[60%] w-[90%] sm:w-[40%]">
-          <HeroCard />
-        </div>
+    <section className="relative flex flex-col items-center justify-center min-h-[100dvh] p-5">
+      <IPhoneFrame className="sm:h-[580px] sm:w-[320px]">
+        <Image
+          src="/test_image.png"
+          alt="Vita health dashboard"
+          fill
+          priority
+          quality={100}
+        />
+      </IPhoneFrame>
+      <div className="relative transform -translate-y-[60%] w-[90%] sm:w-[40%]">
+        <HeroCard />
       </div>
     </section>
   );

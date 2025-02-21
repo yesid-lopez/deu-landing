@@ -1,9 +1,9 @@
 "use client";
 
+import LuloIcon from "@/components/ui/lulo-icon";
 import { cn } from "@/lib/utils";
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
+import { useEffect, useState } from "react";
 interface IPhoneFrameProps {
   children?: React.ReactNode;
   className?: string;
@@ -12,7 +12,8 @@ interface IPhoneFrameProps {
 export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [isInitialAnimationComplete, setIsInitialAnimationComplete] = useState(false);
+  const [isInitialAnimationComplete, setIsInitialAnimationComplete] =
+    useState(false);
 
   useEffect(() => {
     // Trigger initial animation once component mounts
@@ -54,7 +55,7 @@ export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
           transition={{
             duration: isExpanded ? 0 : 0.2,
             type: "spring",
-            stiffness: 200
+            stiffness: 200,
           }}
           onClick={() => setIsExpanded(!isExpanded)}
           className={cn(
@@ -68,20 +69,20 @@ export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
           {/* Optional: Add content inside Dynamic Island */}
           <div className="flex h-full w-full items-center justify-center">
             {isExpanded && (
-              <div className="text-white text-sm p-4">
-                Dynamic Island Content
+              <div className="relative pt-2">
+                <LuloIcon />
               </div>
             )}
           </div>
         </motion.div>
       </div>
-      
+
       {/* Lock Button */}
       <div className="absolute -right-[14px] top-[150px] h-[65px] w-[4px] rounded-r-lg bg-black" />
-      
+
       {/* Volume Buttons */}
       <div className="absolute -left-[14px] top-[150px] h-[65px] w-[4px] rounded-l-lg bg-black" />
       <div className="absolute -left-[14px] top-[230px] h-[65px] w-[4px] rounded-l-lg bg-black" />
     </div>
   );
-} 
+}
