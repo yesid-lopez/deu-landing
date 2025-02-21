@@ -29,8 +29,8 @@ const HeroCard = () => {
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-[100dvh] p-5">
-      <IPhoneFrame className="sm:h-[580px] sm:w-[320px]">
+    <section className="relative flex flex-col items-center justify-center min-h-[100dvh] sm:mt-10 max-sm:scale-95">
+      <IPhoneFrame>
         <Image
           src="/test_image.png"
           alt="Vita health dashboard"
@@ -39,7 +39,7 @@ export default function Hero() {
           quality={100}
         />
       </IPhoneFrame>
-      <div className="relative transform -translate-y-[60%] w-full sm:w-[40%]">
+      <div className="relative transform -translate-y-[80%] sm:w-[40%] p-5">
         <HeroCard />
       </div>
     </section>
