@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const HeroCard = () => {
   return (
-    <div className="flex flex-col items-center rounded-[30px] bg-stone-800">
-      <h1 className="text-2xl md:text-3xl font-bold text-center m-4 text-white">
+    <div className="flex flex-col items-center rounded-[30px] bg-stone-800 gap-4 p-4">
+      <h1 className="text-2xl md:text-3xl font-bold text-center text-white">
         Living in Germany starts here
       </h1>
 
@@ -13,7 +13,7 @@ const HeroCard = () => {
         href="https://apps.apple.com/your-app-link"
         target="_blank"
         rel="noopener noreferrer"
-        className="m-4 transition-transform hover:scale-105"
+        className="transition-transform hover:scale-105 bg-blue-800"
       >
         <Image
           src="/app_store_badge.png"
@@ -39,7 +39,7 @@ export default function Hero() {
           quality={100}
         />
       </IPhoneFrame>
-      <div className="relative transform -translate-y-[60%] w-[90%] sm:w-[40%]">
+      <div className="relative transform -translate-y-[60%] w-full sm:w-[40%]">
         <HeroCard />
       </div>
     </section>

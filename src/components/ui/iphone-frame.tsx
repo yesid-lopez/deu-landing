@@ -69,9 +69,19 @@ export function IPhoneFrame({ children, className }: IPhoneFrameProps) {
           {/* Optional: Add content inside Dynamic Island */}
           <div className="flex h-full w-full items-center justify-center">
             {isExpanded && (
-              <div className="relative pt-2">
+              <motion.div 
+                className="relative pt-2"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{
+                  delay: 0.1,
+                  duration: 0.2,
+                  type: "spring",
+                  stiffness: 200
+                }}
+              >
                 <LuloIcon />
-              </div>
+              </motion.div>
             )}
           </div>
         </motion.div>

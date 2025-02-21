@@ -195,7 +195,7 @@ export function Features() {
         </div>
       </div>
       <motion.div
-        className="fixed bottom-2 left-0 right-0 h-1 bg-primary"
+        className="fixed bottom-4 left-0 right-0 h-1 bg-primary"
         style={{ scaleX: stickyProgress }}
       />
     </div>
