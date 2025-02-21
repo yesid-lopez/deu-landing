@@ -143,7 +143,7 @@ function FeatureText({
 }
 const FeatureRectangle = () => {
   return (
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[90%] h-[60%] sm:h-[70%] bg-black/80 rounded-[3rem]" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[90%] h-[60%] sm:h-[70%] bg-stone-800 rounded-[3rem]" />
   );
 };
 
