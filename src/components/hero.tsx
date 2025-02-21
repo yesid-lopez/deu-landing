@@ -29,8 +29,7 @@ const HeroCard = () => {
 
 export default function Hero() {
   return (
-    <section className="relative grid place-items-center min-h-screen w-full overflow-hidden p-4">
-      <div className="relative w-full place-items-center">
+    <section className="scale-95 relative grid place-items-center h-[100dvh] px-4">
         <IPhoneFrame className="relative">
           <Image
             src="/test_image.png"
@@ -41,10 +40,9 @@ export default function Hero() {
             className="object-cover"
           />
         </IPhoneFrame>
-        <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-[85%] w-full sm:w-[40%]">
+        <div className="absolute w-[95%] sm:w-[40%] bottom-[13%] sm:bottom-[6%]">
           <HeroCard />
         </div>
-      </div>
     </section>
   );
 }
