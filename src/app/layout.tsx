@@ -14,10 +14,51 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LiD",
-  description: "Leben in Deutschland",
+  title: "DEU App - German Citizenship Test Prep",
+  description:
+    "Your mobile companion for mastering the Leben in Deutschland test. Practice questions, study materials, and test simulations for German citizenship preparation.",
+  keywords: [
+    "German citizenship test",
+    "Leben in Deutschland",
+    "Leben in Deutschland test",
+    "German language test",
+    "citizenship preparation",
+    "Germany integration course",
+    "mobile study app",
+    "Einbürgerungstest",
+    "German culture test",
+  ],
   icons: {
     icon: "/lulo.png",
+  },
+  openGraph: {
+    title: "DEU App - German Citizenship Test Prep",
+    description:
+      "Master the Leben in Deutschland test with our mobile study app. Practice questions, study materials, and test simulations for German citizenship preparation.",
+    url: "https://deu.luloai.com",
+    siteName: "DEU App",
+    images: [
+      {
+        url: "/lulo.png",
+        width: 1200,
+        height: 630,
+        alt: "DEU App - German Citizenship Test Preparation",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  themeColor: "#ffffff",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
+  appleWebApp: {
+    capable: true,
+    title: "DEU App",
+    statusBarStyle: "black-translucent",
   },
 };
 
@@ -31,8 +72,6 @@ export default function RootLayout({
       <PlausibleProvider
         domain="deu.luloai.com"
         customDomain="https://plausible-analytics.yesidlopez.de"
-        enabled
-        trackLocalhost
       >
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}

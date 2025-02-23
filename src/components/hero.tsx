@@ -1,5 +1,6 @@
 import { DownloadIOSButton } from "@/components/ui/download-ios-button";
 import { IPhoneFrame } from "@/components/ui/iphone-frame";
+import { ChevronDown } from "lucide-react";
 
 const HeroCard = () => {
   return (
@@ -18,10 +19,15 @@ export default function Hero() {
           <h1 className="text-2xl md:text-3xl font-bold text-center text-black">
             Coming Soon...
           </h1>
+          
         </div>
       </IPhoneFrame>
       <div className="absolute w-[95%] sm:w-[30%] sm:h-[110px] bottom-[13%] sm:bottom12%]">
         <HeroCard />
+      </div>
+      
+      <div className="absolute bottom-4 animate-bounce">
+        <ChevronDown className="h-8 w-8 text-stone-500" />
       </div>
     </section>
   );
