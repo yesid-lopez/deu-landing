@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import PlausibleProvider from "next-plausible";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://deu.luloai.com"),
   title: "DEU App - German Citizenship Test Prep",
   description:
     "Your mobile companion for mastering the Leben in Deutschland test. Practice questions, study materials, and test simulations for German citizenship preparation.",
@@ -48,18 +49,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "DEU App - German Citizenship Test Prep",
+    description: "Your mobile companion for mastering the Leben in Deutschland test. Practice questions, study materials, and test simulations for German citizenship preparation.",
+    images: ["/lulo.png"],
+  },
+};
+
+export const viewport: Viewport = {
   themeColor: "#ffffff",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
-  appleWebApp: {
-    capable: true,
-    title: "DEU App",
-    statusBarStyle: "black-translucent",
-  },
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
