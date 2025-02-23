@@ -31,6 +31,8 @@ export default function RootLayout({
       <PlausibleProvider
         domain="deu.luloai.com"
         customDomain="https://plausible-analytics.yesidlopez.de"
+        enabled
+        trackLocalhost
       >
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
