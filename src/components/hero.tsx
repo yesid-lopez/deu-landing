@@ -1,6 +1,7 @@
 import { DownloadIOSButton } from "@/components/ui/download-ios-button";
 import { IPhoneFrame } from "@/components/ui/iphone-frame";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 const HeroCard = () => {
   return (
@@ -15,17 +16,19 @@ export default function Hero() {
   return (
     <section className="scale-95 relative grid place-items-center h-[100dvh] px-4">
       <IPhoneFrame className="relative">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-2xl md:text-3xl font-bold text-center text-black">
-            Coming Soon...
-          </h1>
-          
-        </div>
+        <Image
+          src="/test_image.png"
+          alt="Vita health dashboard"
+          fill
+          priority
+          quality={100}
+          className="object-cover"
+        />
       </IPhoneFrame>
       <div className="absolute w-[95%] sm:w-[30%] sm:h-[110px] bottom-[13%] sm:bottom12%]">
         <HeroCard />
       </div>
-      
+
       <div className="absolute bottom-4 animate-bounce">
         <ChevronDown className="h-8 w-8 text-stone-500" />
       </div>
