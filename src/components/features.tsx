@@ -166,7 +166,7 @@ export function Features() {
   return (
     <div ref={containerRef} className="h-[400dvh]" id="features">
       {/* Reduced height for tighter scrolling */}
-      <div className="sticky top-0 md:h-screen h-[80vh]">
+      <div className="sticky top-0 md:h-screen h-[80vh] flex flex-col">
         <FeatureRectangle />
         <div className="absolute inset-0 grid grid-cols-12 items-center px-4 sm:px-8">
           <div className="hidden sm:block col-span-12 sm:col-start-2 sm:col-span-4">
@@ -193,11 +193,13 @@ export function Features() {
             ))}
           </div>
         </div>
+        
+        {/* Progress bar moved inside the sticky container */}
+        <motion.div
+          className="absolute bottom-4 left-0 right-0 h-1 bg-cyan-600"
+          style={{ scaleX: stickyProgress }}
+        />
       </div>
-      <motion.div
-        className="fixed bottom-4 left-0 right-0 h-1 bg-cyan-600"
-        style={{ scaleX: stickyProgress }}
-      />
     </div>
   );
 }
