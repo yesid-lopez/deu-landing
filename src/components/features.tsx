@@ -43,7 +43,7 @@ function Screenshot({
         alt={`App screenshot ${index + 1}`}
         fill
         priority={index === 0}
-        className="object-cover"
+        className="object-cover pt-10"
       />
     </motion.div>
   );

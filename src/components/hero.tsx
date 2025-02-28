@@ -16,16 +16,14 @@ export default function Hero() {
   return (
     <section className="scale-95 relative grid place-items-center h-[100dvh] px-4">
       <IPhoneFrame className="relative">
-        <div>
           <Image
-            src="/test_image.png"
-            alt="Vita health dashboard"
+            src="/features/feature_1.jpeg"
+            alt="DEU App dashboard"
             fill
             priority
             quality={100}
-            className="object-cover"
+            className="object-cover pt-10"
           />
-        </div>
       </IPhoneFrame>
       <div className="absolute w-[95%] sm:w-[30%] sm:h-[110px] bottom-[13%] sm:bottom-[12%]">
         <HeroCard />
