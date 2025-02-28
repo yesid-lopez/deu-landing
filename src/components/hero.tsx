@@ -25,7 +25,7 @@ export default function Hero() {
             className="object-cover pt-10"
           />
       </IPhoneFrame>
-      <div className="absolute w-[95%] sm:w-[30%] sm:h-[110px] bottom-[13%] sm:bottom-[12%]">
+      <div className="absolute w-[95%] sm:w-[30%] h-[110px] bottom-[140px] sm:bottom-[90px]">
         <HeroCard />
       </div>
       
