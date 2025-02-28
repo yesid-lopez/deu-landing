@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const HeroCard = () => {
   return (
-    <div className="grid place-items-center rounded-[30px] bg-stone-800 gap-4 p-4 h-full">
+    <div className="grid place-items-center rounded-[30px] bg-stone-800 gap-4 p-6 h-full w-full">
       {/* App Store Badge Button */}
       <DownloadIOSButton />
     </div>
@@ -15,7 +15,7 @@ const HeroCard = () => {
 export default function Hero() {
   return (
     <section className="scale-95 relative grid place-items-center h-[100dvh] px-4">
-      <div className="relative flex flex-col items-center">
+      <div className="relative flex flex-col items-center w-full max-w-screen-xl">
         <IPhoneFrame className="relative">
             <Image
               src="/features/feature_1.jpeg"
@@ -26,10 +26,10 @@ export default function Hero() {
               className="object-cover pt-10"
             />
         </IPhoneFrame>
-        <div className="absolute w-[95%] sm:w-[30%] h-[110px] bottom-[140px] sm:bottom-[90px]">
+        <div className="absolute w-[400px] sm:max-w-[500px] h-[110px] bottom-0">
           <HeroCard />
         </div>
-        <div className="mt-4">
+        <div className="absolute -bottom-12">
           <JumplingArrow />
         </div>
       </div>
