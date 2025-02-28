@@ -15,20 +15,24 @@ const HeroCard = () => {
 export default function Hero() {
   return (
     <section className="scale-95 relative grid place-items-center h-[100dvh] px-4">
-      <IPhoneFrame className="relative">
-          <Image
-            src="/features/feature_1.jpeg"
-            alt="DEU App dashboard"
-            fill
-            priority
-            quality={100}
-            className="object-cover pt-10"
-          />
-      </IPhoneFrame>
-      <div className="absolute w-[95%] sm:w-[30%] h-[110px] bottom-[140px] sm:bottom-[90px]">
-        <HeroCard />
+      <div className="relative flex flex-col items-center">
+        <IPhoneFrame className="relative">
+            <Image
+              src="/features/feature_1.jpeg"
+              alt="DEU App dashboard"
+              fill
+              priority
+              quality={100}
+              className="object-cover pt-10"
+            />
+        </IPhoneFrame>
+        <div className="absolute w-[95%] sm:w-[30%] h-[110px] bottom-[140px] sm:bottom-[90px]">
+          <HeroCard />
+        </div>
+        <div className="mt-4">
+          <JumplingArrow />
+        </div>
       </div>
-      <JumplingArrow />
     </section>
   );
 }

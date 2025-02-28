@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 const JumplingArrow = () => {
   return (
     <div
-      className="absolute bottom-1 animate-bounce cursor-pointer"
+      className="animate-bounce cursor-pointer"
       onClick={() =>
         document
           .getElementById("features")
