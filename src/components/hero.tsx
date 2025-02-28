@@ -1,6 +1,6 @@
 import { DownloadIOSButton } from "@/components/ui/download-ios-button";
 import { IPhoneFrame } from "@/components/ui/iphone-frame";
-import { ChevronDown } from "lucide-react";
+import JumplingArrow from "@/components/ui/jumpling-arrow";
 import Image from "next/image";
 
 const HeroCard = () => {
@@ -28,10 +28,7 @@ export default function Hero() {
       <div className="absolute w-[95%] sm:w-[30%] h-[110px] bottom-[140px] sm:bottom-[90px]">
         <HeroCard />
       </div>
-      
-      <div className="absolute bottom-4 animate-bounce">
-        <ChevronDown className="h-8 w-8 text-stone-500" />
-      </div>
+      <JumplingArrow />
     </section>
   );
 }
