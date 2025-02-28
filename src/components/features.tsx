@@ -28,21 +28,9 @@ export function Features() {
       clearTimeout(timerRef.current);
       timerRef.current = null;
     }
-    
+
     setCurrentFeatureIndex((prev) =>
       prev === features.length - 1 ? 0 : prev + 1
-    );
-  }, [features.length]);
-
-  // Function to handle previous feature
-  const handleBack = useCallback(() => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-      timerRef.current = null;
-    }
-    
-    setCurrentFeatureIndex((prev) =>
-      prev === 0 ? features.length - 1 : prev - 1
     );
   }, [features.length]);
 
@@ -76,9 +64,9 @@ export function Features() {
     if (pauseTimeoutRef.current) {
       clearTimeout(pauseTimeoutRef.current);
     }
-    
+
     setIsPaused(true);
-    
+
     // Resume after 10 seconds of inactivity
     pauseTimeoutRef.current = setTimeout(() => {
       setIsPaused(false);
@@ -182,7 +170,7 @@ export function Features() {
                     />
                   ))}
                 </div>
-                
+
                 {/* Feature counter */}
                 <div className="mt-1 sm:mt-2 text-xs sm:text-sm text-gray-400 text-center sm:text-left">
                   {currentFeatureIndex + 1} of {features.length}

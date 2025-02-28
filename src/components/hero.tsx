@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const HeroCard = () => {
   return (
-    <div className="grid place-items-center rounded-[30px] bg-stone-800 gap-4 p-6 h-full w-full">
+    <div className="grid place-items-center rounded-[30px] bg-gray-900 gap-4 p-6 h-full w-full">
       {/* App Store Badge Button */}
       <DownloadIOSButton />
     </div>
