@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "German culture test",
   ],
   icons: {
-    icon: "/lulo.png",
+    icon: "/DEU.png",
   },
   openGraph: {
     title: "DEU App - German Citizenship Test Prep",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "DEU App",
     images: [
       {
-        url: "/lulo.png",
+        url: "/DEU.png",
         width: 1200,
         height: 630,
         alt: "DEU App - German Citizenship Test Preparation",
