@@ -1,5 +1,5 @@
 # Variables
-IMAGE_NAME = lid
+IMAGE_NAME = deu
 IMAGE_TAG = latest
 PLATFORM = linux/amd64
 

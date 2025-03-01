@@ -2,9 +2,9 @@ appName: deu
 namespace: lulo
 
 image:
-  repository: docker.yesidlopez.de/lid
+  repository: docker.yesidlopez.de/deu
   pullPolicy: IfNotPresent
-  tag: "3.2"
+  tag: "3.3"
 
 service:
   type: LoadBalancer
