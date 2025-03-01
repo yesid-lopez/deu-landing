@@ -8,7 +8,7 @@ export const DownloadIOSButton = () => {
 
   return (
     <a
-      href="https://apps.apple.com/your-app-link"
+      href="https://luloai.com"
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => plausible("DownloadAppStore")}
