@@ -82,7 +82,7 @@ export function Features() {
   return (
     <div
       ref={containerRef}
-      className="flex flex-col items-center justify-center py-8 px-4 md:py-16 min-h-[90dvh]"
+      className="flex flex-col items-center justify-center px-4 md:py-16 min-h-[90dvh]"
       id="features"
       onMouseEnter={() => {
         setIsPaused(true);
@@ -97,8 +97,8 @@ export function Features() {
     >
       <div className="flex flex-col lg:flex-row items-center gap-2 sm:gap-4 md:gap-12 w-full max-w-6xl mx-auto">
         {/* iPhone Frame with Feature Screenshot */}
-        <div className="relative w-full lg:w-auto flex justify-center mb-2 sm:mb-4 lg:mb-0">
-          <IPhoneFrame className="scale-40 sm:scale-100 pt-4 sm:pt-8 z-10">
+        <div className="relative w-full lg:w-auto flex justify-center sm:mb-4 max-sm:scale-[0.85]">
+          <IPhoneFrame className="pt-4 sm:pt-8 z-10">
             <div className="relative w-full h-full bg-white">
               {/* Feature Screenshot */}
               <AnimatePresence mode="wait">
@@ -114,7 +114,7 @@ export function Features() {
                     src={currentFeature.screenshot}
                     alt={`${currentFeature.title} screenshot`}
                     fill
-                    className="object-cover pt-10"
+                    className="object-cover"
                     priority
                   />
                 </motion.div>
@@ -126,7 +126,7 @@ export function Features() {
         {/* Feature Description */}
         <div className="w-full lg:w-3/5 max-w-[400px] sm:max-w-[500px] lg:max-w-2xl mx-auto lg:mx-0">
           {/* Static card container with fixed dimensions */}
-          <div className="bg-gray-900 text-white p-6 sm:p-5 lg:p-10 rounded-3xl shadow-lg h-[400px] md:h-[350px] lg:h-[400px] w-full flex flex-col relative overflow-hidden">
+          <div className="bg-gray-900 text-white p-6 lg:p-10 rounded-3xl shadow-lg h-[400px] md:h-[350px] lg:h-[400px] w-full flex flex-col relative overflow-hidden">
             {/* Content container with static navigation */}
             <div className="flex flex-col h-full">
               {/* Animated text content */}
