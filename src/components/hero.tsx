@@ -14,7 +14,7 @@ const HeroCard = () => {
 
 export default function Hero() {
   return (
-    <section className="scale-95 relative grid place-items-center h-[100dvh] px-4">
+    <section className="relative grid place-items-center min-h-[90dvh] px-4 py-8 md:py-12">
       <div className="relative flex flex-col items-center w-full max-w-screen-xl">
         <IPhoneFrame className="relative">
             <Image
