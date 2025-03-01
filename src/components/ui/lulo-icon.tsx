@@ -1,14 +1,30 @@
 import Image from "next/image";
 
-const LuloIcon = () => {
+interface LuloIconProps {
+  width?: number;
+  height?: number;
+  className?: string;
+}
+
+const LuloIcon = ({ width = 120, height = 120, className = "" }: LuloIconProps) => {
   return (
-    <Image
+    <div 
+      className={`relative inline-block ${className}`} 
+      style={{ 
+        width: `${width}px`, 
+        height: `${height}px`,
+        minWidth: `${width}px`,
+        minHeight: `${height}px`
+      }}
+    >
+      <Image
         src="/lulo.png"
         alt="Lulo logo"
-        width={120}
-        height={120}
+        fill
+        style={{ objectFit: "contain" }}
         priority
       />
+    </div>
   );
 };
 
