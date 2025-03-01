@@ -108,13 +108,13 @@ export function Features() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute inset-0 pt-10"
+                  className="absolute inset-0"
                 >
                   <Image
                     src={currentFeature.screenshot}
                     alt={`${currentFeature.title} screenshot`}
                     fill
-                    className="object-cover"
+                    className="object-cover pt-10"
                     priority
                   />
                 </motion.div>
