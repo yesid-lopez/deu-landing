@@ -126,7 +126,7 @@ export function Features() {
         {/* Feature Description */}
         <div className="w-full lg:w-3/5 max-w-[400px] sm:max-w-[500px] lg:max-w-2xl mx-auto lg:mx-0">
           {/* Static card container with fixed dimensions */}
-          <div className="bg-gray-900 text-white p-4 sm:p-5 lg:p-10 rounded-2xl shadow-lg h-[280px] sm:h-[320px] lg:h-[400px] w-full flex flex-col relative overflow-hidden">
+          <div className="bg-gray-900 text-white p-5 lg:p-10 rounded-2xl shadow-lg h-[280px] sm:h-[320px] lg:h-[400px] w-full flex flex-col relative overflow-hidden">
             {/* Content container with static navigation */}
             <div className="flex flex-col h-full">
               {/* Animated text content */}
@@ -139,10 +139,10 @@ export function Features() {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 lg:mb-5 text-white leading-tight">
+                    <h3 className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-3 lg:mb-5 text-white leading-tight">
                       {currentFeature.title}
                     </h3>
-                    <p className="text-sm sm:text-base lg:text-lg text-gray-200 mb-3 sm:mb-4 lg:mb-8 overflow-y-auto max-h-[120px] sm:max-h-[140px] lg:max-h-none leading-relaxed">
+                    <p className="text-md sm:text-xl text-gray-200 mb-3 sm:mb-4 lg:mb-8 overflow-y-auto max-h-[120px] sm:max-h-[140px] lg:max-h-none leading-relaxed">
                       {currentFeature.description}
                     </p>
                   </motion.div>
@@ -161,7 +161,7 @@ export function Features() {
                         handleUserInteraction();
                       }}
                       className={cn(
-                        "w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full transition-all",
+                        "w-4 h-4 sm:h-3 sm:w-3 rounded-full transition-all",
                         currentFeatureIndex === index
                           ? "bg-cyan-500 w-4 sm:w-5 md:w-6"
                           : "bg-gray-600 hover:bg-gray-500"
@@ -172,7 +172,7 @@ export function Features() {
                 </div>
 
                 {/* Feature counter */}
-                <div className="mt-1 sm:mt-2 text-xs sm:text-sm text-gray-400 text-center sm:text-left">
+                <div className="mt-1 sm:mt-2 text-sm sm:text-sm text-gray-400 text-center sm:text-left">
                   {currentFeatureIndex + 1} of {features.length}
                 </div>
               </div>
