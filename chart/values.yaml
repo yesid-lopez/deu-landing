@@ -1,10 +1,10 @@
-appName: lid
+appName: deu
 namespace: lulo
 
 image:
-  repository: docker.yesidlopez.de/lid
+  repository: docker.yesidlopez.de/deu
   pullPolicy: IfNotPresent
-  tag: "2.14"
+  tag: "3.6"
 
 service:
   type: LoadBalancer

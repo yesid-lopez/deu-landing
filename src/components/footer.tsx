@@ -44,17 +44,9 @@ const Footer = () => {
     {
       title: "Company",
       links: [
-        { label: "About", href: "https://luloai.yesidlopez.de" },
-        { label: "Careers", href: "https://luloai.yesidlopez.de" },
-        { label: "Blog", href: "https://luloai.yesidlopez.de" },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy", href: "/privacy" },
-        { label: "Terms", href: "/terms" },
-        { label: "Cookie Policy", href: "/cookies" },
+        { label: "About", href: "https://deu.luloai.com/about" },
+        { label: "Careers", href: "https://deu.luloai.com" },
+        { label: "Blog", href: "https://deu.luloai.com" },
       ],
     },
   ];
@@ -64,7 +56,7 @@ const Footer = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Logo and Social Section */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8">
                 <LuloIcon />

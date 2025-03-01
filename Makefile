@@ -1,5 +1,5 @@
 # Variables
-IMAGE_NAME = lid
+IMAGE_NAME = deu
 IMAGE_TAG = latest
 PLATFORM = linux/amd64
 
@@ -27,7 +27,6 @@ stop:
 publish:
 	docker push docker.yesidlopez.de/$(IMAGE_NAME):$(IMAGE_TAG)
 	sed -i '' 's/tag: ".*"/tag: "$(IMAGE_TAG)"/' chart/values.yaml
-	helm upgrade --install lid chart/ --namespace lulo
 
 build-and-publish: build publish
 

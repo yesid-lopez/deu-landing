@@ -2,202 +2,188 @@
 
 import { IPhoneFrame } from "@/components/ui/iphone-frame";
 import featuresData from "@/data/features.json";
-import {
-  motion,
-  MotionValue,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-// Update the type definition
 type FeatureContent = {
   title: string;
   description: string;
   screenshot: string;
 };
 
-const featureContents: FeatureContent[] = featuresData.features;
+export function Features() {
+  const [currentFeatureIndex, setCurrentFeatureIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const features: FeatureContent[] = featuresData.features;
+  const currentFeature = features[currentFeatureIndex];
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-function Screenshot({
-  src,
-  index,
-  progress,
-}: {
-  src: string;
-  index: number;
-  progress: MotionValue<number>;
-}) {
-  const visibility = useTransform(
-    progress,
-    [index * 0.2 - 0.1, index * 0.2 + 0.05],
-    ["none", "block"]
-  );
+  // Function to handle next feature
+  const handleNext = useCallback(() => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+
+    setCurrentFeatureIndex((prev) =>
+      prev === features.length - 1 ? 0 : prev + 1
+    );
+  }, [features.length]);
+
+  // Set up the timer for automatic advancement
+  useEffect(() => {
+    if (isPaused) {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+        timerRef.current = null;
+      }
+      return;
+    }
+
+    // Set timeout to advance to next feature after 3 seconds
+    timerRef.current = setTimeout(() => {
+      handleNext();
+    }, 5000);
+
+    // Cleanup on unmount or when dependencies change
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+        timerRef.current = null;
+      }
+    };
+  }, [currentFeatureIndex, isPaused, handleNext]);
+
+  // Pause on user interaction
+  const handleUserInteraction = useCallback(() => {
+    // Clear any existing pause timeout
+    if (pauseTimeoutRef.current) {
+      clearTimeout(pauseTimeoutRef.current);
+    }
+
+    setIsPaused(true);
+
+    // Resume after 10 seconds of inactivity
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false);
+    }, 10000);
+
+    return () => {
+      if (pauseTimeoutRef.current) {
+        clearTimeout(pauseTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <motion.div className="absolute inset-0" style={{ display: visibility }}>
-      <Image
-        src={src}
-        alt={`App screenshot ${index + 1}`}
-        fill
-        priority={index === 0}
-        className="object-cover"
-      />
-    </motion.div>
-  );
-}
-
-function FeatureText({
-  index,
-  progress,
-}: {
-  index: number;
-  progress: MotionValue<number>;
-}) {
-  const transitionPoints = {
-    start: index * 0.2,
-    enter: index * 0.2 + 0.05,
-    exit: (index + 1) * 0.2 - 0.05,
-    end: (index + 1) * 0.2,
-  };
-
-  // Create all transforms unconditionally
-  const baseYOffset = useSpring(
-    useTransform(
-      progress,
-      [
-        transitionPoints.start,
-        transitionPoints.enter,
-        transitionPoints.exit,
-        transitionPoints.end,
-      ],
-      index === 0 ? [0, 0, 0, -250] : [250, 0, 0, -250]
-    ),
-    {
-      stiffness: 100,
-      damping: 20,
-      mass: 0.1,
-    }
-  );
-
-  const baseOpacity = useSpring(
-    useTransform(
-      progress,
-      [
-        transitionPoints.start,
-        transitionPoints.enter,
-        transitionPoints.exit,
-        transitionPoints.end,
-      ],
-      index === 0 ? [1, 1, 1, 0] : [0, 1, 1, 0]
-    ),
-    {
-      stiffness: 100,
-      damping: 20,
-    }
-  );
-
-  const lastItemYOffset = useSpring(
-    useTransform(
-      progress,
-      [transitionPoints.start, transitionPoints.enter],
-      [200, 0]
-    ),
-    {
-      stiffness: 100,
-      damping: 20,
-      mass: 0.1,
-    }
-  );
-
-  const lastItemOpacity = useSpring(
-    useTransform(
-      progress,
-      [transitionPoints.start, transitionPoints.enter],
-      [0, 1]
-    ),
-    {
-      stiffness: 100,
-      damping: 20,
-    }
-  );
-
-  const isLastItem = index === featureContents.length - 1;
-
-  return (
-    <motion.div
-      className="absolute inset-0 flex flex-col justify-center text-white"
-      style={{
-        opacity: isLastItem ? lastItemOpacity : baseOpacity,
-        y: isLastItem ? lastItemYOffset : baseYOffset,
+    <div
+      ref={containerRef}
+      className="flex flex-col items-center justify-center px-4 md:py-16 min-h-[90dvh]"
+      id="features"
+      onMouseEnter={() => {
+        setIsPaused(true);
+        if (timerRef.current) {
+          clearTimeout(timerRef.current);
+          timerRef.current = null;
+        }
+      }}
+      onMouseLeave={() => {
+        setIsPaused(false);
       }}
     >
-      <h3 className="text-3xl font-bold mb-4">
-        {featureContents[index].title}
-      </h3>
-      <p className="text-lg opacity-90">{featureContents[index].description}</p>
-    </motion.div>
-  );
-}
-const FeatureRectangle = () => {
-  return (
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[90%] h-[60%] sm:h-[70%] bg-stone-800 rounded-[3rem]" />
-  );
-};
-
-export function Features() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"], // Changed offset to make scrolling more responsive
-  });
-
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100, // Increased for more immediate response
-    damping: 20, // Reduced for smoother movement
-    mass: 0.1, // Reduced for quicker response
-    restDelta: 0.001,
-  });
-
-  const stickyProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
-
-  return (
-    <div ref={containerRef} className="h-[400dvh]" id="features">
-      {/* Reduced height for tighter scrolling */}
-      <div className="sticky top-0 md:h-screen h-[80vh]">
-        <FeatureRectangle />
-        <div className="absolute inset-0 grid grid-cols-12 items-center px-4 sm:px-8">
-          <div className="hidden sm:block col-span-12 sm:col-start-2 sm:col-span-4">
-            <IPhoneFrame>
-              <div className="relative w-full h-full">
-                {featureContents.map((feature, index) => (
-                  <Screenshot
-                    key={index}
-                    src={feature.screenshot}
-                    index={index}
-                    progress={smoothProgress}
+      <div className="flex flex-col lg:flex-row items-center gap-2 sm:gap-4 md:gap-12 w-full max-w-6xl mx-auto">
+        {/* iPhone Frame with Feature Screenshot */}
+        <div className="relative w-full lg:w-auto flex justify-center sm:mb-4 max-sm:scale-[0.85]">
+          <IPhoneFrame className="pt-4 sm:pt-8 z-10">
+            <div className="relative w-full h-full bg-white">
+              {/* Feature Screenshot */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`screenshot-${currentFeatureIndex}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={currentFeature.screenshot}
+                    alt={`${currentFeature.title} screenshot`}
+                    fill
+                    className="object-cover"
+                    priority
                   />
-                ))}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </IPhoneFrame>
+        </div>
+
+        {/* Feature Description */}
+        <div className="w-full lg:w-3/5 max-w-[400px] sm:max-w-[500px] lg:max-w-2xl mx-auto lg:mx-0">
+          {/* Static card container with fixed dimensions */}
+          <div className="bg-gray-900 text-white p-6 lg:p-10 rounded-3xl shadow-lg h-[400px] md:h-[350px] lg:h-[400px] w-full flex flex-col relative overflow-hidden">
+            {/* Content container with static navigation */}
+            <div className="flex flex-col h-full">
+              {/* Animated text content */}
+              <div className="flex-grow overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`text-${currentFeatureIndex}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="h-full flex flex-col"
+                  >
+                    <h3 className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-3 lg:mb-5 text-white leading-tight">
+                      {currentFeature.title}
+                    </h3>
+                    <div className="relative flex-grow">
+                      <p className="max-sm:pt-2 text-md sm:text-xl text-gray-200 overflow-y-auto h-[200px] sm:h-[140px] lg:h-auto lg:max-h-none leading-relaxed pr-2">
+                        {currentFeature.description}
+                      </p>
+                      <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-gray-900 to-transparent pointer-events-none sm:hidden"></div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
               </div>
-            </IPhoneFrame>
-          </div>
-          <div className="col-span-12 col-start-2 col-end-12 sm:col-span-5 sm:col-start-7 h-[250px] relative mx-5">
-            {featureContents.map((_, index) => (
-              <FeatureText
-                key={index}
-                index={index}
-                progress={smoothProgress}
-              />
-            ))}
+
+              {/* Static navigation and counter (not animated) */}
+              <div className="mt-auto pt-3">
+                {/* Feature Navigation */}
+                <div className="flex gap-2 justify-center sm:justify-start">
+                  {features.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        setCurrentFeatureIndex(index);
+                        handleUserInteraction();
+                      }}
+                      className={cn(
+                        "w-4 h-4 sm:h-3 sm:w-3 rounded-full transition-all",
+                        currentFeatureIndex === index
+                          ? "bg-cyan-500 w-4 sm:w-5 md:w-6"
+                          : "bg-gray-600 hover:bg-gray-500"
+                      )}
+                      aria-label={`View feature ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Feature counter */}
+                <div className="mt-1 sm:mt-2 text-sm sm:text-sm text-gray-400 text-center sm:text-left">
+                  {currentFeatureIndex + 1} of {features.length}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <motion.div
-        className="fixed bottom-4 left-0 right-0 h-1 bg-primary"
-        style={{ scaleX: stickyProgress }}
-      />
     </div>
   );
 }

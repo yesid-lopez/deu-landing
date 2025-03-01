@@ -1,10 +1,11 @@
 import { DownloadIOSButton } from "@/components/ui/download-ios-button";
 import { IPhoneFrame } from "@/components/ui/iphone-frame";
-import { ChevronDown } from "lucide-react";
+import JumplingArrow from "@/components/ui/jumpling-arrow";
+import Image from "next/image";
 
 const HeroCard = () => {
   return (
-    <div className="grid place-items-center rounded-[30px] bg-stone-800 gap-4 p-4 h-full">
+    <div className="grid place-items-center rounded-[30px] bg-gray-900 gap-4 p-6 h-full w-full">
       {/* App Store Badge Button */}
       <DownloadIOSButton />
     </div>
@@ -13,21 +14,24 @@ const HeroCard = () => {
 
 export default function Hero() {
   return (
-    <section className="scale-95 relative grid place-items-center h-[100dvh] px-4">
-      <IPhoneFrame className="relative">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-2xl md:text-3xl font-bold text-center text-black">
-            Coming Soon...
-          </h1>
-          
+    <section className="relative grid place-items-center min-h-[90dvh] px-4 md:py-12">
+      <div className="relative flex flex-col items-center w-full max-w-screen-xl max-sm:scale-[0.85]">
+        <IPhoneFrame className="relative">
+            <Image
+              src="/features/feature_1.jpeg"
+              alt="DEU App dashboard"
+              fill
+              priority
+              quality={100}
+              className="object-cover pt-10"
+            />
+        </IPhoneFrame>
+        <div className="absolute w-[400px] sm:max-w-[500px] h-[110px] bottom-0">
+          <HeroCard />
         </div>
-      </IPhoneFrame>
-      <div className="absolute w-[95%] sm:w-[30%] sm:h-[110px] bottom-[13%] sm:bottom12%]">
-        <HeroCard />
-      </div>
-      
-      <div className="absolute bottom-4 animate-bounce">
-        <ChevronDown className="h-8 w-8 text-stone-500" />
+        <div className="absolute -bottom-12">
+          <JumplingArrow />
+        </div>
       </div>
     </section>
   );
