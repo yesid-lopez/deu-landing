@@ -59,7 +59,7 @@ const Footer = () => {
           <div className="lg:col-span-3">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8">
-                <LuloIcon />
+                <LuloIcon width={32} height={32} />
               </div>
               <span className="text-xl font-bold">Lulo</span>
             </div>
