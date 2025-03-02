@@ -14,8 +14,8 @@ const HeroCard = () => {
 
 export default function Hero() {
   return (
-    <section className="relative grid place-items-center min-h-[90dvh] px-4 md:py-12">
-      <div className="relative flex flex-col items-center w-full max-w-screen-xl scale-[0.85] -top-10 sm:-top-5">
+    <section className="relative grid place-items-center min-h-[90dvh] px-4 pt-8 pb-16 md:py-12">
+      <div className="relative flex flex-col items-center w-full max-w-screen-xl md:scale-[0.85]">
         <IPhoneFrame className="relative">
             <Image
               src="/features/feature_1.jpeg"
@@ -26,10 +26,10 @@ export default function Hero() {
               className="object-cover pt-10"
             />
         </IPhoneFrame>
-        <div className="absolute w-[400px] sm:max-w-[500px] h-[110px] bottom-0">
+        <div className="absolute w-[90%] max-w-[400px] sm:max-w-[500px] h-[110px] bottom-0">
           <HeroCard />
         </div>
-        <div className="absolute -bottom-12">
+        <div className="absolute bottom-[-3rem]">
           <JumplingArrow />
         </div>
       </div>
