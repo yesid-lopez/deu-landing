@@ -82,7 +82,7 @@ export function Features() {
   return (
     <div
       ref={containerRef}
-      className="flex flex-col items-center justify-center px-4 md:py-16 min-h-[90dvh] pb-16"
+      className="relative py-16 px-4 md:px-6"
       id="features"
       onMouseEnter={() => {
         setIsPaused(true);
@@ -95,9 +95,9 @@ export function Features() {
         setIsPaused(false);
       }}
     >
-      <div className="flex flex-col lg:flex-row items-center gap-2 sm:gap-4 md:gap-12 w-full max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-2 sm:gap-4 md:gap-12">
         {/* iPhone Frame with Feature Screenshot */}
-        <div className="relative w-full lg:w-auto flex justify-center sm:mb-4 max-sm:scale-[0.85]">
+        <div className="w-full lg:w-auto flex justify-center sm:mb-4">
           <IPhoneFrame className="pt-4 sm:pt-8 z-10">
             <div className="relative w-full h-full bg-white">
               {/* Feature Screenshot */}
@@ -126,7 +126,7 @@ export function Features() {
         {/* Feature Description */}
         <div className="w-full lg:w-3/5 max-w-[400px] sm:max-w-[500px] lg:max-w-2xl mx-auto lg:mx-0">
           {/* Static card container with fixed dimensions */}
-          <div className="bg-gray-900 text-white p-6 lg:p-10 rounded-3xl shadow-lg h-[400px] md:h-[350px] lg:h-[400px] w-full flex flex-col relative overflow-hidden">
+          <div className="bg-gray-900 text-white p-6 lg:p-10 rounded-3xl shadow-lg h-auto min-h-[350px] w-full flex flex-col relative overflow-hidden">
             {/* Content container with static navigation */}
             <div className="flex flex-col h-full">
               {/* Animated text content */}
@@ -144,7 +144,7 @@ export function Features() {
                       {currentFeature.title}
                     </h3>
                     <div className="relative flex-grow">
-                      <p className="max-sm:pt-2 text-md sm:text-xl text-gray-200 overflow-y-auto h-[200px] sm:h-[140px] lg:h-auto lg:max-h-none leading-relaxed pr-2">
+                      <p className="max-sm:pt-2 text-md sm:text-xl text-gray-200 max-h-[200px] sm:max-h-[140px] lg:max-h-none overflow-y-auto leading-relaxed pr-2">
                         {currentFeature.description}
                       </p>
                       <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-gray-900 to-transparent pointer-events-none sm:hidden"></div>
