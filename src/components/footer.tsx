@@ -1,132 +1,126 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import LuloIcon from "@/components/ui/lulo-icon";
-import { Separator } from "@/components/ui/separator";
-import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    {
-      icon: <Instagram className="h-5 w-5" />,
-      href: "https://instagram.com/lulo",
-      label: "Instagram",
-    },
-    {
-      icon: <Twitter className="h-5 w-5" />,
-      href: "https://twitter.com/lulo",
-      label: "Twitter",
-    },
-    {
-      icon: <Linkedin className="h-5 w-5" />,
-      href: "https://linkedin.com/company/lulo",
-      label: "LinkedIn",
-    },
-    {
-      icon: <Github className="h-5 w-5" />,
-      href: "https://github.com/lulo",
-      label: "GitHub",
-    },
-  ];
-
-  const footerLinks = [
-    {
-      title: "Product",
-      links: [
-        { label: "Features", href: "#features" },
-        { label: "Pricing", href: "#pricing" },
-        { label: "Download", href: "#download" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { label: "About", href: "https://deu.luloai.com/about" },
-        { label: "Careers", href: "https://deu.luloai.com" },
-        { label: "Blog", href: "https://deu.luloai.com" },
-      ],
-    },
-  ];
-
+export default function Footer() {
+  
+  const luloUrl = "https://luloai.com";
+  
   return (
-    <footer className="bg-background py-12 px-4 md:px-8">
-      <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Logo and Social Section */}
-          <div className="lg:col-span-3">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8">
-                <LuloIcon width={32} height={32} />
+    <footer className="bg-black text-white relative overflow-hidden">
+      {/* Curved top edge - concave style - reduced height */}
+      <div className="h-6 w-full bg-[#F5F5F5] relative overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-12 w-[200%] bg-black rounded-t-[100%] left-[-50%]"></div>
+      </div>
+      
+      {/* Material-like layer for entire footer */}
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px] z-10 pointer-events-none"></div>
+      
+      {/* Subtle glow effect for entire footer */}
+      <div 
+        className="absolute inset-0 opacity-20 z-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle at center 30%, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 70%)'
+        }}
+      ></div>
+      
+      {/* Enhanced grainy texture overlay */}
+      <div 
+        className="absolute inset-0 opacity-50 mix-blend-overlay pointer-events-none z-20"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px',
+          backgroundRepeat: 'repeat',
+        }}
+      ></div>
+      
+      {/* Second grain layer for more texture */}
+      <div 
+        className="absolute inset-0 opacity-30 mix-blend-soft-light pointer-events-none z-20"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          backgroundSize: '300px 300px',
+          backgroundRepeat: 'repeat',
+        }}
+      ></div>
+      
+      <div className="container mx-auto pt-8 pb-0 px-8 md:px-16 relative z-30">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Logo Column */}
+          <div>
+            <Link href={luloUrl} className="block mb-6">
+              <div className="w-10 h-10 border border-white flex items-center justify-center">
+                <span className="sr-only">lulo</span>
+                <div className="w-5 h-5 bg-white"></div>
               </div>
-              <span className="text-xl font-bold">Lulo</span>
-            </div>
-            <p className="text-muted-foreground mb-6">
-              Making life in Germany easier for everyone.
-            </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <Button
-                  key={social.label}
-                  variant="ghost"
-                  size="icon"
-                  asChild
+            </Link>
+          </div>
+          
+          {/* The Good Column */}
+          <div>
+            <h3 className="text-lg mb-4">The Good</h3>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              <li><Link href={`${luloUrl}/`} className="hover:text-white transition-colors">Home</Link></li>
+              <li><Link href={`${luloUrl}/case-studies`} className="hover:text-white transition-colors">Case Studies</Link></li>
+              <li><Link href={`${luloUrl}/about-us`} className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href={`${luloUrl}/contact-us`} className="hover:text-white transition-colors">Contact Us</Link></li>
+            </ul>
+          </div>
+          
+          {/* The Boring Column */}
+          <div>
+            <h3 className="text-lg mb-4">The Boring</h3>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              <li><Link href={`${luloUrl}/privacy`} className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link href={`${luloUrl}/terms`} className="hover:text-white transition-colors">Terms of Service</Link></li>
+              <li><Link href={`${luloUrl}/cookies`} className="hover:text-white transition-colors">Cookie Policy</Link></li>
+            </ul>
+          </div>
+          
+          {/* The Cool Column */}
+          <div>
+            <h3 className="text-lg mb-4">The Cool</h3>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              <li>
+                <a 
+                  href="https://linkedin.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
                 >
-                  <Link
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                  >
-                    {social.icon}
-                  </Link>
-                </Button>
-              ))}
-            </div>
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://instagram.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Instagram
+                </a>
+              </li>
+            </ul>
           </div>
-
-          {/* Links Sections */}
-          {footerLinks.map((section) => (
-            <div key={section.title}>
-              <h3 className="font-semibold mb-4">{section.title}</h3>
-              <ul className="space-y-3">
-                {section.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
-
-        <Separator className="my-8" />
-
-        {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>© {currentYear} Lulo. All rights reserved.</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link href="/terms" className="hover:text-primary transition-colors">
-              Terms
-            </Link>
-            <Link href="/privacy" className="hover:text-primary transition-colors">
-              Privacy
-            </Link>
-            <Link href="/cookies" className="hover:text-primary transition-colors">
-              Cookies
-            </Link>
-          </div>
+        
+        {/* lulo Text - Improved responsiveness */}
+        <div className="mt-8 relative overflow-hidden" style={{ height: '8rem' }}>
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter absolute bottom-[-1rem] sm:bottom-[-1.25rem] md:bottom-[-2rem] lg:bottom-[-3rem] z-40">
+            lulo
+          </h1>
+          <Image 
+            src="/lulo.png" 
+            alt="Lulo Logo" 
+            width={192}
+            height={192}
+            className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 absolute bottom-[-3rem] md:bottom-[-4rem] lg:bottom-[-5rem] right-0 z-40" 
+          />
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer; 
+} 
