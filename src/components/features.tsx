@@ -82,7 +82,7 @@ export function Features() {
   return (
     <div
       ref={containerRef}
-      className="flex flex-col items-center justify-center px-4 md:py-16 min-h-[90dvh]"
+      className="flex flex-col items-center justify-center px-4 md:py-16 min-h-[90dvh] pb-16"
       id="features"
       onMouseEnter={() => {
         setIsPaused(true);
