@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import PlausibleProvider from "next-plausible";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -81,6 +82,11 @@ export default function RootLayout({
         >
           {children}
         </body>
+        <Script
+          src="https://umami.yesidlopez.de/umami"
+          data-website-id="a4fb8b14-f70b-4539-a5c4-6d70a8858e2f"
+          strategy="afterInteractive"
+        />
       </PlausibleProvider>
     </html>
   );
