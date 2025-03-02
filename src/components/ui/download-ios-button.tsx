@@ -13,6 +13,7 @@ export const DownloadIOSButton = () => {
       rel="noopener noreferrer"
       onClick={() => plausible("DownloadAppStore")}
       className="transition-transform hover:scale-105"
+      data-umami-event="Download App Store"
     >
       <Image
         src="/app_store_badge.png"
