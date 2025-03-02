@@ -14,9 +14,9 @@ const HeroCard = () => {
 
 export default function Hero() {
   return (
-    <section className="pt-12 sm:pt-16 px-4 md:px-6">
+    <section className="pt-12 sm:pt-16 px-4 md:px-6 pb-12">
       <div className="max-w-screen-xl mx-auto flex flex-col items-center">
-        <div className="w-full flex justify-center">
+        <div className="w-full flex justify-center relative">
           <IPhoneFrame className="relative">
             <Image
               src="/features/feature_1.jpeg"
@@ -27,11 +27,14 @@ export default function Hero() {
               className="object-cover pt-10"
             />
           </IPhoneFrame>
+          
+          {/* Positioned HeroCard to overlap with the bottom of the iPhone frame */}
+          <div className="absolute bottom-12 translate-y-1/2 w-[300px] sm:w-[400px] h-[110px] z-10">
+            <HeroCard />
+          </div>
         </div>
-        <div className="relative w-[400px] sm:max-w-[500px] h-[110px] mt-4">
-          <HeroCard />
-        </div>
-        <div className="relative mt-4 mb-8">
+
+        <div className="absolute bottom-[70px] sm:bottom-[20px] translate-y-1/2">
           <JumplingArrow />
         </div>
       </div>
