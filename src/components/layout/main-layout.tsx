@@ -10,9 +10,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Fixed height announcement bar */}
-      <div className="sticky top-0 z-50">
+      {/* <div className="sticky top-0 z-50">
         <AnnouncementBar />
-      </div>
+      </div> */}
       
       {/* Main content with consistent padding */}
       <main className="flex-grow">
