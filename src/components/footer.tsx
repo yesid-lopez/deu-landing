@@ -73,9 +73,9 @@ export default function Footer() {
           <div>
             <h3 className="text-lg mb-4">The Boring</h3>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li><Link href={`${luloUrl}/privacy`} className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href={`${luloUrl}/terms`} className="hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link href={`${luloUrl}/cookies`} className="hover:text-white transition-colors">Cookie Policy</Link></li>
+              <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
+              <li><Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link></li>
             </ul>
           </div>
           
