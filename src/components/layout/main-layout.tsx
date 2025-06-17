@@ -1,5 +1,4 @@
 import React from 'react';
-import { AnnouncementBar } from '@/components/announcement-bar';
 import Footer from '@/components/footer';
 
 interface MainLayoutProps {

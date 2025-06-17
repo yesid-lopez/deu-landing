@@ -14,7 +14,7 @@ export default function PrivacyPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
             <p className="mb-4">
-              Lulo ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how the <strong>DEU app</strong> ("the App") collects, uses, stores, and protects your information. The App is designed to help users prepare for the German citizenship test (<em>Einbürgerungstest</em> and <em>Leben in Deutschland</em>) and functions entirely offline.
+              Lulo (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how the <strong>DEU app</strong> (&ldquo;the App&rdquo;) collects, uses, stores, and protects your information. The App is designed to help users prepare for the German citizenship test (<em>Einbürgerungstest</em> and <em>Leben in Deutschland</em>) and functions entirely offline.
             </p>
           </section>
 
@@ -25,7 +25,7 @@ export default function PrivacyPage() {
             
             <h3 className="text-xl font-semibold mb-3">A. Data Stored Locally on Your Device</h3>
             <p className="mb-4">
-              All data is stored on your device using iOS's <strong>UserDefaults</strong> system. The App stores the following types of information:
+              All data is stored on your device using iOS&rsquo;s <strong>UserDefaults</strong> system. The App stores the following types of information:
             </p>
             
             <div className="mb-4">
@@ -107,7 +107,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 mb-4">
               <li><strong>Local Only:</strong> Data remains on your device</li>
               <li><strong>No Cloud Sync:</strong> We do not use iCloud or cloud services</li>
-              <li><strong>Secured by iOS:</strong> Data is protected by your device's encryption and access controls</li>
+              <li><strong>Secured by iOS:</strong> Data is protected by your device&rsquo;s encryption and access controls</li>
               <li><strong>No Third-Party Access:</strong> No data is shared with third parties</li>
             </ul>
           </section>
@@ -131,7 +131,7 @@ export default function PrivacyPage() {
               <ul className="list-disc pl-6 mb-4">
                 <li>View and modify preferences in app settings</li>
                 <li>Clear study progress or saved questions</li>
-                <li>Use "Reset App" to delete all data</li>
+                <li>Use &ldquo;Reset App&rdquo; to delete all data</li>
               </ul>
             </div>
 
@@ -152,7 +152,7 @@ export default function PrivacyPage() {
           <hr className="my-8" />
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">7. Children's Privacy</h2>
+            <h2 className="text-2xl font-semibold mb-4">7. Children&rsquo;s Privacy</h2>
             <p className="mb-4">
               The app may be used by individuals under 13. However, we do not knowingly collect personal information. All data stays local and anonymous.
             </p>
@@ -183,7 +183,7 @@ export default function PrivacyPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">10. Changes to This Policy</h2>
             <p className="mb-4">
-              We may update this policy from time to time. Changes will be noted with a new "Last Updated" date. Continued use of the app confirms your acceptance of the updates.
+              We may update this policy from time to time. Changes will be noted with a new &ldquo;Last Updated&rdquo; date. Continued use of the app confirms your acceptance of the updates.
             </p>
           </section>
 
