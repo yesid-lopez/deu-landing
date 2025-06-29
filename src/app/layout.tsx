@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import PlausibleProvider from "next-plausible";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -53,7 +52,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "DEU App - German Citizenship Test Prep",
-    description: "Your mobile companion for mastering the Leben in Deutschland test. Practice questions, study materials, and test simulations for German citizenship preparation.",
+    description:
+      "Your mobile companion for mastering the Leben in Deutschland test. Practice questions, study materials, and test simulations for German citizenship preparation.",
     images: ["/lulo.png"],
   },
 };
@@ -73,21 +73,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <PlausibleProvider
-        domain="deu.luloai.com"
-        customDomain="https://plausible-analytics.yesidlopez.de"
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          {children}
-        </body>
-        <Script
-          src="https://umami.yesidlopez.de/umami"
-          data-website-id="a4fb8b14-f70b-4539-a5c4-6d70a8858e2f"
-          strategy="afterInteractive"
-        />
-      </PlausibleProvider>
+        {children}
+      </body>
+      <Script
+        src="https://umami.yesidlopez.de/umami"
+        data-website-id="fded09ad-b8fe-4f6c-8911-f6342b254cd1"
+        strategy="afterInteractive"
+      />
     </html>
   );
 }
