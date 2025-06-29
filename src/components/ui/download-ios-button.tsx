@@ -1,17 +1,14 @@
 "use client";
 
-import { usePlausible } from "next-plausible";
 import Image from "next/image";
 
 export const DownloadIOSButton = () => {
-  const plausible = usePlausible();
-
+  
   return (
     <a
-      href="https://luloai.com"
+      href="https://apps.apple.com/de/app/deu-einb%C3%BCrgerungstest-2025/id6746731600?l=en-GB"
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => plausible("DownloadAppStore")}
       className="transition-transform hover:scale-105"
       data-umami-event="Download App Store"
     >
