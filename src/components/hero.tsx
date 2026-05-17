@@ -28,12 +28,12 @@ export function Hero() {
               <p className="text-navy-400 text-base sm:text-lg font-medium mb-5 tracking-wide">
                 The best app to prepare for the German citizenship test
               </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-navy-900">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-navy-900 break-words">
                 Pass the{" "}
                 <span className="relative inline-block">
                   <span className="text-accent-blue">Leben</span>
                   <svg
-                    className="absolute -bottom-1 left-0 w-full h-2"
+                    className="absolute -bottom-1 left-0 w-full"
                     viewBox="0 0 100 8"
                     fill="none"
                     preserveAspectRatio="none"
@@ -41,7 +41,7 @@ export function Hero() {
                     <path
                       d="M1 6C20 2 80 2 99 6"
                       stroke="#3b82f6"
-                      strokeWidth="2"
+                      strokeWidth="3"
                       strokeLinecap="round"
                     />
                   </svg>
@@ -50,7 +50,7 @@ export function Hero() {
                 <span className="relative inline-block">
                   <span className="text-accent-pink">Deutschland</span>
                   <svg
-                    className="absolute -bottom-1 left-0 w-full h-2"
+                    className="absolute -bottom-1 left-0 w-full"
                     viewBox="0 0 100 8"
                     fill="none"
                     preserveAspectRatio="none"
@@ -58,7 +58,7 @@ export function Hero() {
                     <path
                       d="M1 6C20 2 80 2 99 6"
                       stroke="#e84393"
-                      strokeWidth="2"
+                      strokeWidth="3"
                       strokeLinecap="round"
                     />
                   </svg>
@@ -67,7 +67,7 @@ export function Hero() {
                 <span className="relative inline-block">
                   <span className="text-accent-emerald">confidence</span>
                   <svg
-                    className="absolute -bottom-1 left-0 w-full h-2"
+                    className="absolute -bottom-1 left-0 w-full"
                     viewBox="0 0 100 8"
                     fill="none"
                     preserveAspectRatio="none"
@@ -75,7 +75,7 @@ export function Hero() {
                     <path
                       d="M1 6C20 2 80 2 99 6"
                       stroke="#10b981"
-                      strokeWidth="2"
+                      strokeWidth="3"
                       strokeLinecap="round"
                     />
                   </svg>
