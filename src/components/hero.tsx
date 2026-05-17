@@ -28,10 +28,9 @@ export function Hero() {
               <p className="text-navy-400 text-base sm:text-lg font-medium mb-5 tracking-wide">
                 The best app to prepare for the German citizenship test
               </p>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-navy-900 break-words">
-                Pass the{" "}
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-navy-900">
                 <span className="relative inline-block">
-                  <span className="text-accent-blue">Leben</span>
+                  <span className="text-accent-blue">Pass</span>
                   <svg
                     className="absolute -bottom-1 left-0 w-full"
                     viewBox="0 0 100 8"
@@ -46,9 +45,9 @@ export function Hero() {
                     />
                   </svg>
                 </span>{" "}
-                in{" "}
+                the Leben in Deutschland{" "}
                 <span className="relative inline-block">
-                  <span className="text-accent-pink">Deutschland</span>
+                  <span className="text-accent-pink">test</span>
                   <svg
                     className="absolute -bottom-1 left-0 w-full"
                     viewBox="0 0 100 8"
@@ -63,9 +62,9 @@ export function Hero() {
                     />
                   </svg>
                 </span>{" "}
-                test with{" "}
+                the{" "}
                 <span className="relative inline-block">
-                  <span className="text-accent-emerald">confidence</span>
+                  <span className="text-accent-emerald">easy</span>
                   <svg
                     className="absolute -bottom-1 left-0 w-full"
                     viewBox="0 0 100 8"
@@ -79,8 +78,8 @@ export function Hero() {
                       strokeLinecap="round"
                     />
                   </svg>
-                </span>
-                .
+                </span>{" "}
+                way.
               </h1>
             </motion.div>
 
