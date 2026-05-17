@@ -1,12 +1,21 @@
+import { Navigation } from "@/components/navigation";
+import { Hero } from "@/components/hero";
+import { AppShowcase } from "@/components/app-showcase";
 import { Features } from "@/components/features";
-import Hero from "@/components/hero";
-import MainLayout from "@/components/layout/main-layout";
+import { HowItWorks } from "@/components/how-it-works";
+import { DownloadCTA } from "@/components/download-cta";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <MainLayout>
+    <>
+      <Navigation />
       <Hero />
+      <AppShowcase />
       <Features />
-    </MainLayout>
+      <HowItWorks />
+      <DownloadCTA />
+      <Footer />
+    </>
   );
 }
