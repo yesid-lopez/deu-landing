@@ -57,11 +57,11 @@ export function DownloadCTA() {
             className="inline-block transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
           >
             <Image
-              src="/app_store_badge.png"
+              src="/images/appstore/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg"
               alt="Download on the App Store"
               width={180}
               height={60}
-              className="h-[52px] w-auto brightness-0 invert"
+              className="h-[52px] w-auto"
             />
           </a>
         </motion.div>

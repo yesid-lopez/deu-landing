@@ -215,16 +215,6 @@ export function AppShowcase() {
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
-
-          {/* Active screenshot caption */}
-          <div className="mt-6 text-center max-w-md mx-auto">
-            <h3 className="text-lg font-bold text-navy-900">
-              {screens[active].title}
-            </h3>
-            <p className="mt-1 text-sm text-navy-400 leading-relaxed">
-              {screens[active].description}
-            </p>
-          </div>
         </div>
       </div>
     </section>
