@@ -28,12 +28,12 @@ export function Hero() {
               <p className="text-navy-400 text-base sm:text-lg font-medium mb-5 tracking-wide">
                 The best app to prepare for the German citizenship test
               </p>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-navy-900">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-navy-900">
                 Pass the{" "}
                 <span className="relative inline-block">
                   <span className="text-accent-blue">Leben</span>
                   <svg
-                    className="absolute -bottom-1 left-0 w-full"
+                    className="absolute -bottom-1 left-0 w-full h-2"
                     viewBox="0 0 100 8"
                     fill="none"
                     preserveAspectRatio="none"
@@ -41,7 +41,7 @@ export function Hero() {
                     <path
                       d="M1 6C20 2 80 2 99 6"
                       stroke="#3b82f6"
-                      strokeWidth="3"
+                      strokeWidth="2"
                       strokeLinecap="round"
                     />
                   </svg>
@@ -50,7 +50,7 @@ export function Hero() {
                 <span className="relative inline-block">
                   <span className="text-accent-pink">Deutschland</span>
                   <svg
-                    className="absolute -bottom-1 left-0 w-full"
+                    className="absolute -bottom-1 left-0 w-full h-2"
                     viewBox="0 0 100 8"
                     fill="none"
                     preserveAspectRatio="none"
@@ -58,7 +58,7 @@ export function Hero() {
                     <path
                       d="M1 6C20 2 80 2 99 6"
                       stroke="#e84393"
-                      strokeWidth="3"
+                      strokeWidth="2"
                       strokeLinecap="round"
                     />
                   </svg>
@@ -67,7 +67,7 @@ export function Hero() {
                 <span className="relative inline-block">
                   <span className="text-accent-emerald">confidence</span>
                   <svg
-                    className="absolute -bottom-1 left-0 w-full"
+                    className="absolute -bottom-1 left-0 w-full h-2"
                     viewBox="0 0 100 8"
                     fill="none"
                     preserveAspectRatio="none"
@@ -75,7 +75,7 @@ export function Hero() {
                     <path
                       d="M1 6C20 2 80 2 99 6"
                       stroke="#10b981"
-                      strokeWidth="3"
+                      strokeWidth="2"
                       strokeLinecap="round"
                     />
                   </svg>
@@ -109,7 +109,7 @@ export function Hero() {
                 className="inline-block transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
               >
                 <Image
-                  src="/app_store_badge.png"
+                  src="/images/appstore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
                   alt="Download on the App Store"
                   width={180}
                   height={60}
@@ -126,6 +126,14 @@ export function Hero() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="relative flex justify-center items-center"
           >
+            {/* Decorative icons */}
+            <div className="absolute -top-12 -right-10 w-28 h-28 sm:w-36 sm:h-36 opacity-70 pointer-events-none">
+              <Image src="/images/icon_3.svg" alt="" width={150} height={150} className="w-full h-auto" />
+            </div>
+            <div className="absolute -bottom-10 -right-14 w-24 h-24 sm:w-32 sm:h-32 opacity-50 pointer-events-none">
+              <Image src="/images/icon_5.svg" alt="" width={130} height={130} className="w-full h-auto" />
+            </div>
+
             <div className="relative z-10 flex items-start gap-3 sm:gap-5">
               <div className="w-[42%] sm:w-[230px] lg:w-[250px] mt-10 shrink-0">
                 <div className="relative aspect-[931/2016] rounded-[36px] overflow-hidden border-[6px] border-navy-900/90 shadow-2xl bg-white">
