@@ -26,7 +26,7 @@ export function Hero() {
               transition={{ duration: 0.7 }}
             >
               <p className="text-navy-400 text-base sm:text-lg font-medium mb-5 tracking-wide">
-                The best app to prepare for the German citizenship test
+                The best app for the citizenship test
               </p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-navy-900">
                 <span className="relative inline-block">

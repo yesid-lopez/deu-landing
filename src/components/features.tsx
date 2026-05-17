@@ -1,21 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  BookOpen,
-  GraduationCap,
-  MapPin,
-  Sparkles,
-  ShieldCheck,
-  Star,
-  type LucideIcon,
-} from "lucide-react";
+import Image from "next/image";
 
 type Feature = {
   number: string;
   title: string;
   description: string;
-  Icon: LucideIcon;
+  iconPath: string;
 };
 
 const features: Feature[] = [
@@ -24,42 +16,42 @@ const features: Feature[] = [
     title: "300+ Official Questions",
     description:
       "Practice every official Einbürgerungstest question, organized for clear and structured study.",
-    Icon: BookOpen,
+    iconPath: "/images/icon_1.svg",
   },
   {
     number: "02",
     title: "Realistic Mock Tests",
     description:
       "Simulate the exam end-to-end with full mock tests and timed sessions to know exactly where you stand.",
-    Icon: GraduationCap,
+    iconPath: "/images/icon_7.svg",
   },
   {
     number: "03",
     title: "All 16 Bundesländer",
     description:
       "Pick your state and study the region-specific questions you'll actually be asked.",
-    Icon: MapPin,
+    iconPath: "/images/icon_9.svg",
   },
   {
     number: "04",
     title: "Instant Feedback",
     description:
       "Correct answers in green, mistakes in red — learn the moment you answer.",
-    Icon: Sparkles,
+    iconPath: "/images/icon_2.svg",
   },
   {
     number: "05",
     title: "Save Favorites",
     description:
       "Star the trickiest questions and revisit them anytime to lock in what you've learned.",
-    Icon: Star,
+    iconPath: "/images/icon_5.svg",
   },
   {
     number: "06",
     title: "Offline & Private",
     description:
       "No account, no internet, no tracking. Study anywhere with your data safely on your device.",
-    Icon: ShieldCheck,
+    iconPath: "/images/icon_6.svg",
   },
 ];
 
@@ -165,7 +157,6 @@ function BentoCard({ feature, index, className, layout }: BentoCardProps) {
 }
 
 function HorizontalLayout({ feature }: { feature: Feature }) {
-  const { Icon } = feature;
   return (
     <div className="relative z-10 h-full flex items-end justify-between p-6 sm:p-8 min-h-[220px]">
       <div className="flex-1">
@@ -177,10 +168,14 @@ function HorizontalLayout({ feature }: { feature: Feature }) {
           {feature.description}
         </p>
       </div>
-      <div className="w-24 h-24 sm:w-28 sm:h-28 relative flex-shrink-0 ml-4 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 flex items-center justify-center">
-        <Icon
-          className="w-16 h-16 sm:w-20 sm:h-20 text-white/95 drop-shadow-lg"
-          strokeWidth={1.5}
+      <div className="w-24 h-24 sm:w-28 sm:h-28 relative flex-shrink-0 ml-4 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+        <Image
+          src={feature.iconPath}
+          alt={feature.title}
+          fill
+          className="object-contain drop-shadow-lg"
+          unoptimized
+          loading="lazy"
         />
       </div>
     </div>
@@ -188,17 +183,20 @@ function HorizontalLayout({ feature }: { feature: Feature }) {
 }
 
 function TallLayout({ feature }: { feature: Feature }) {
-  const { Icon } = feature;
   return (
     <div className="relative z-10 h-full flex flex-col p-6 sm:p-8 min-h-[280px] sm:min-h-0">
       <span className="inline-block text-sm font-semibold text-white/55 tracking-[0.15em] mb-3">
         {feature.number}
       </span>
       <div className="flex-1 flex items-center justify-center py-6">
-        <div className="w-28 h-28 sm:w-36 sm:h-36 relative transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 flex items-center justify-center">
-          <Icon
-            className="w-20 h-20 sm:w-24 sm:h-24 text-white/95 drop-shadow-lg"
-            strokeWidth={1.5}
+        <div className="w-28 h-28 sm:w-36 sm:h-36 relative transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3">
+          <Image
+            src={feature.iconPath}
+            alt={feature.title}
+            fill
+            className="object-contain drop-shadow-lg"
+            unoptimized
+            loading="lazy"
           />
         </div>
       </div>
@@ -213,17 +211,20 @@ function TallLayout({ feature }: { feature: Feature }) {
 }
 
 function CompactLayout({ feature }: { feature: Feature }) {
-  const { Icon } = feature;
   return (
     <div className="relative z-10 h-full flex flex-col p-6 min-h-[220px]">
       <div className="flex items-start justify-between mb-auto">
         <span className="inline-block text-sm font-semibold text-white/55 tracking-[0.15em]">
           {feature.number}
         </span>
-        <div className="w-14 h-14 sm:w-16 sm:h-16 relative transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 flex items-center justify-center">
-          <Icon
-            className="w-9 h-9 sm:w-10 sm:h-10 text-white/95 drop-shadow-lg"
-            strokeWidth={1.5}
+        <div className="w-14 h-14 sm:w-16 sm:h-16 relative transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+          <Image
+            src={feature.iconPath}
+            alt={feature.title}
+            fill
+            className="object-contain drop-shadow-lg"
+            unoptimized
+            loading="lazy"
           />
         </div>
       </div>

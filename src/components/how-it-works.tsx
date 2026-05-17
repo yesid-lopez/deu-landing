@@ -1,13 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { MapPin, ListChecks, GraduationCap, type LucideIcon } from "lucide-react";
 
 type Step = {
   number: string;
   title: string;
   description: string;
-  Icon: LucideIcon;
+  icon: string;
   color: string;
   lightColor: string;
 };
@@ -18,7 +18,7 @@ const steps: Step[] = [
     title: "Pick Your Bundesland",
     description:
       "Choose your German state so you get the region-specific questions that will actually appear in your exam.",
-    Icon: MapPin,
+    icon: "/images/icon_4.svg",
     color: "bg-accent-blue",
     lightColor: "bg-accent-blue/10",
   },
@@ -27,7 +27,7 @@ const steps: Step[] = [
     title: "Practice Daily",
     description:
       "Work through multiple-choice questions with instant feedback. Star the ones you want to revisit and build your knowledge step by step.",
-    Icon: ListChecks,
+    icon: "/images/icon_3.svg",
     color: "bg-accent-pink",
     lightColor: "bg-accent-pink/10",
   },
@@ -36,7 +36,7 @@ const steps: Step[] = [
     title: "Take a Mock Test",
     description:
       "Simulate the real exam end-to-end, review your results, and head into the test with the confidence of someone who's done it before.",
-    Icon: GraduationCap,
+    icon: "/images/icon_7.svg",
     color: "bg-accent-emerald",
     lightColor: "bg-accent-emerald/10",
   },
@@ -69,44 +69,44 @@ export function HowItWorks() {
           <div className="hidden md:block absolute top-[72px] left-[calc(16.67%+24px)] right-[calc(16.67%+24px)] h-0.5 bg-navy-200/40" />
 
           <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
-            {steps.map((step, index) => {
-              const { Icon } = step;
-              return (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className="flex flex-col items-center text-center"
-                >
-                  <div className="relative mb-6 z-10">
-                    <div className="w-36 h-36 rounded-full bg-white">
-                      <div
-                        className={`w-full h-full rounded-full ${step.lightColor} flex items-center justify-center`}
-                      >
-                        <Icon
-                          className="w-16 h-16 text-navy-900"
-                          strokeWidth={1.5}
-                        />
-                      </div>
-                    </div>
+            {steps.map((step, index) => (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="relative mb-6 z-10">
+                  <div className="w-36 h-36 rounded-full bg-white">
                     <div
-                      className={`absolute -bottom-1 -right-1 w-10 h-10 rounded-full ${step.color} text-white text-sm font-bold flex items-center justify-center shadow-lg`}
+                      className={`w-full h-full rounded-full ${step.lightColor} flex items-center justify-center`}
                     >
-                      {step.number}
+                      <Image
+                        src={step.icon}
+                        alt={step.title}
+                        width={80}
+                        height={80}
+                        className="w-20 h-20"
+                      />
                     </div>
                   </div>
+                  <div
+                    className={`absolute -bottom-1 -right-1 w-10 h-10 rounded-full ${step.color} text-white text-sm font-bold flex items-center justify-center shadow-lg`}
+                  >
+                    {step.number}
+                  </div>
+                </div>
 
-                  <h3 className="text-xl font-bold text-navy-900 mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-navy-500 leading-relaxed max-w-xs">
-                    {step.description}
-                  </p>
-                </motion.div>
-              );
-            })}
+                <h3 className="text-xl font-bold text-navy-900 mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-navy-500 leading-relaxed max-w-xs">
+                  {step.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
