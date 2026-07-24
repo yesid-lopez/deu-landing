@@ -135,12 +135,12 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right — App screenshots */}
+          {/* Right — App screenshots (hidden on mobile — the dedicated AppShowcase carousel below is the mobile preview) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="relative flex justify-center items-center"
+            className="relative hidden md:flex justify-center items-center"
           >
             {/* Decorative icons */}
             <div className="absolute -top-12 -right-10 w-28 h-28 sm:w-36 sm:h-36 opacity-70 pointer-events-none">
