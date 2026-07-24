@@ -5,6 +5,8 @@ import Link from "next/link";
 
 const APP_STORE_URL =
   "https://apps.apple.com/de/app/deu-einb%C3%BCrgerungstest-2025/id6746731600?l=en-GB";
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.lulo.deu";
 
 export default function Footer() {
   return (
@@ -104,7 +106,18 @@ export default function Footer() {
                   data-umami-event="Download App Store"
                   className="text-sm text-gray-400 hover:text-white transition-colors"
                 >
-                  Download
+                  Download on iOS
+                </a>
+              </li>
+              <li>
+                <a
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-umami-event="Download Google Play"
+                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  Download on Android
                 </a>
               </li>
             </ul>
@@ -158,6 +171,17 @@ export default function Footer() {
                   className="text-sm text-gray-400 hover:text-white transition-colors"
                 >
                   App Store Page
+                </a>
+              </li>
+              <li>
+                <a
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-umami-event="Download Google Play"
+                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  Google Play Page
                 </a>
               </li>
             </ul>
