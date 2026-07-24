@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 
 const APP_STORE_URL =
   "https://apps.apple.com/de/app/deu-einb%C3%BCrgerungstest-2025/id6746731600?l=en-GB";
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.lulo.deu";
 
 const navLinks = [
   { href: "#screenshots", label: "Screenshots" },
@@ -87,8 +89,8 @@ export function Navigation() {
                 {link.label}
               </a>
             ))}
-            <div className="ml-4">
-              <Button asChild>
+            <div className="ml-4 flex items-center gap-2">
+              <Button asChild size="icon" aria-label="Download on the App Store">
                 <a
                   href={APP_STORE_URL}
                   target="_blank"
@@ -102,7 +104,26 @@ export function Navigation() {
                   >
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                   </svg>
-                  Download Free
+                </a>
+              </Button>
+              <Button asChild size="icon" aria-label="Get it on Google Play">
+                <a
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-umami-event="Download Google Play"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92z" fill="#5778c5" />
+                    <path d="M16.87 15.078l-2.373-2.373L3.94 22.86a.98.98 0 001.005.038l11.925-6.82z" fill="#eb3131" />
+                    <path d="M20.16 10.86l-3.29-1.892-2.673 2.674 2.673 2.674 3.29-1.892a1.088 1.088 0 000-1.564z" fill="#f6b60b" />
+                    <path d="M4.945 1.102a.98.98 0 00-1.005.038l10.557 10.155 2.373-2.373L4.945 1.102z" fill="#3bad49" />
+                  </svg>
                 </a>
               </Button>
             </div>
@@ -172,7 +193,7 @@ export function Navigation() {
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.25 }}
-                    className="mt-2 px-4"
+                    className="mt-2 px-4 flex flex-col gap-2"
                   >
                     <Button asChild className="w-full">
                       <a
@@ -189,7 +210,29 @@ export function Navigation() {
                         >
                           <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                         </svg>
-                        Download Free
+                        Download for iOS
+                      </a>
+                    </Button>
+                    <Button asChild className="w-full">
+                      <a
+                        href={PLAY_STORE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setMobileMenuOpen(false)}
+                        data-umami-event="Download Google Play"
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="w-4 h-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92z" fill="#5778c5" />
+                          <path d="M16.87 15.078l-2.373-2.373L3.94 22.86a.98.98 0 001.005.038l11.925-6.82z" fill="#eb3131" />
+                          <path d="M20.16 10.86l-3.29-1.892-2.673 2.674 2.673 2.674 3.29-1.892a1.088 1.088 0 000-1.564z" fill="#f6b60b" />
+                          <path d="M4.945 1.102a.98.98 0 00-1.005.038l10.557 10.155 2.373-2.373L4.945 1.102z" fill="#3bad49" />
+                        </svg>
+                        Download for Android
                       </a>
                     </Button>
                   </motion.div>

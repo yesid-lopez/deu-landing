@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 
 const APP_STORE_URL =
   "https://apps.apple.com/de/app/deu-einb%C3%BCrgerungstest-2025/id6746731600?l=en-GB";
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.lulo.deu";
 
 const stats = [
   { value: "300+", label: "Official Questions" },
@@ -47,7 +49,7 @@ export function DownloadCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ delay: 0.15, duration: 0.5 }}
-          className="mt-9 flex justify-center"
+          className="mt-9 flex flex-wrap items-center justify-center gap-5"
         >
           <a
             href={APP_STORE_URL}
@@ -61,6 +63,21 @@ export function DownloadCTA() {
               alt="Download on the App Store"
               width={180}
               height={60}
+              className="h-[52px] w-auto"
+            />
+          </a>
+          <a
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-umami-event="Download Google Play"
+            className="inline-block transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
+          >
+            <Image
+              src="/images/playstore/google-play-badge-wht.svg"
+              alt="Get it on Google Play"
+              width={180}
+              height={53}
               className="h-[52px] w-auto"
             />
           </a>
