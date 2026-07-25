@@ -24,6 +24,31 @@
       "title": "Select Your Bundesland",
       "description": "Customize your study experience by selecting your Bundesland. This ensures that you get the specific regional questions relevant to your state in Germany.",
       "screenshot": "/features/feature_5.jpeg"
+    },
+    {
+      "title": "Flashcards",
+      "description": "Review key German vocabulary from the questions with flip-to-reveal flashcards, complete with translations to help the terms stick.",
+      "screenshot": "/features/feature_6.jpeg"
+    },
+    {
+      "title": "Why Is This Correct?",
+      "description": "Every question comes with a clear explanation of the correct answer, so you understand the reasoning instead of just memorizing.",
+      "screenshot": "/features/feature_7.jpeg"
+    },
+    {
+      "title": "Instant Translations",
+      "description": "Translate any question and its answer options into your language with one tap, so nothing gets lost in translation while you study.",
+      "screenshot": "/features/feature_8.jpeg"
+    },
+    {
+      "title": "Track Your Progress",
+      "description": "See your overall completion, daily streak, and a breakdown by category to know exactly where to focus your studying next.",
+      "screenshot": "/features/feature_9.jpeg"
+    },
+    {
+      "title": "Visual Questions",
+      "description": "Some questions test your knowledge of German symbols and flags visually — pick the correct image, not just the correct text.",
+      "screenshot": "/features/feature_10.jpeg"
     }
   ]
 }
