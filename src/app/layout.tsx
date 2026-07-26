@@ -73,7 +73,7 @@ export default function RootLayout({
       </body>
       <Script
         src="https://umami.yesidlopez.de/umami"
-        data-website-id="fded09ad-b8fe-4f6c-8911-f6342b254cd1"
+        data-website-id="c25ec96d-6cba-44e6-87f8-eb9654655c54"
         strategy="afterInteractive"
       />
     </html>
